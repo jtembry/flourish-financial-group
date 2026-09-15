@@ -59,7 +59,7 @@ header.site .wrap { display: grid; grid-template-columns: 1fr auto; align-items:
 header.site .brand { grid-column: 1; grid-row: 1; }
 header.site .btn { grid-column: 2; grid-row: 1; justify-self: end; padding: .55rem 1.1rem; font-size: .95rem; }
 header.site nav.primary { grid-column: 1 / -1; grid-row: 2; }
-@media (min-width: 80rem) {
+@media (min-width: 92rem) {
   header.site .wrap { grid-template-columns: auto 1fr auto; }
   header.site nav.primary { grid-column: 2; grid-row: 1; justify-self: center; }
   header.site .btn { grid-column: 3; }
