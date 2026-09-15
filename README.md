@@ -6,66 +6,69 @@ Read this once. After setup, editing is three steps: open the folder, ask Codex 
 
 ---
 
-## One-time setup (about 30 minutes)
+## One-time setup (about 30 minutes, Windows)
+
+You'll paste a few lines into **PowerShell**. To open it: press the Windows key, type *PowerShell*, and choose **Windows PowerShell** (or *Terminal*). Paste each line with a right-click, then press Enter.
 
 ### 1. Create a GitHub account
 
-Go to https://github.com and sign up with the email you want tied to the website. Free plan. Pick a username you're happy having in a web address. JT will transfer the website's repository to this account.
+Go to https://github.com and sign up with the email you want tied to the website. Free plan. Pick a username you're happy having in a web address. JT will transfer the website's repository to this account, so send him the username.
 
-### 2. Install the tools (Mac)
+### 2. Install the tools
 
-Open **Terminal** (press ⌘-Space, type Terminal, press Return). Paste each line and press Return.
+Paste these one at a time. Each downloads and installs a program; say Yes if Windows asks for permission.
 
-Install Apple's developer tools (gives you `git`):
+    winget install --id Git.Git -e
+    winget install --id OpenJS.NodeJS.LTS -e
+    winget install --id GitHub.cli -e
 
-    xcode-select --install
-
-Click Install in the window that appears. Then install Node from https://nodejs.org — download the **LTS** installer and run it. Close Terminal and open it again. Check both worked:
+Close PowerShell and open it again so it sees the new programs. Check they worked; each should print a version number:
 
     git --version
     node --version
+    gh --version
 
-Each should print a version number.
-
-**Windows:** install **Git for Windows** from https://git-scm.com and **Node LTS** from https://nodejs.org, then use the "Git Bash" app as your terminal. Codex CLI on Windows currently expects WSL (Windows Subsystem for Linux); if that's a hurdle, ask JT and we'll set up the Windows path together.
-
-### 3. Sign in to GitHub from Terminal
+### 3. Tell git who you are, and sign in to GitHub
 
     git config --global user.name "Beth Hacker"
     git config --global user.email "the-email-you-used-on-github"
-
-Install GitHub's command-line helper and sign in (it opens your browser):
-
-    brew install gh   # Mac with Homebrew; otherwise download from https://cli.github.com
     gh auth login
 
-Choose GitHub.com, HTTPS, and "Login with a web browser." Approve in the browser.
+For the questions: **GitHub.com**, **HTTPS**, **Yes** to authenticate git, **Login with a web browser**. Copy the code it shows, press Enter, paste the code in the browser, approve.
 
 ### 4. Download your website's files
 
-After JT has transferred the repository to your account:
+After JT has transferred the repository to your account. Replace `YOUR-USERNAME` with your GitHub username. The last line takes about a minute the first time only.
 
-    cd ~/Documents
-    gh repo clone YOUR-GITHUB-USERNAME/flourish-financial-group
+    cd ~\Documents
+    gh repo clone YOUR-USERNAME/flourish-financial-group
     cd flourish-financial-group
     npm install
 
-`npm install` takes a minute the first time only.
-
 ### 5. Install Codex and sign in
 
-    npm install -g @openai/codex
+Codex is OpenAI's coding assistant; it's included with your ChatGPT subscription and runs on Windows natively.
+
+    powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"
+
+Close PowerShell, open it again, go back to the folder, and start it:
+
+    cd ~\Documents\flourish-financial-group
     codex
 
-The first time, choose **Sign in with ChatGPT** and approve in the browser. That's it. Type `/quit` or press Ctrl-C to leave Codex.
+The first time, choose **Sign in with ChatGPT** and approve in the browser. Codex may also ask to set up its sandbox and want an administrator's OK; on your own laptop that's you, so allow it. Type `/quit` to leave Codex whenever you're done.
+
+**Prefer a window over a terminal?** The ChatGPT desktop app for Windows includes Codex too. Install ChatGPT from the Microsoft Store, sign in, open the Codex tab, and point it at the `Documents\flourish-financial-group` folder. Everything in the next section works the same way there.
+
+**On a Mac instead?** The steps are the same with these swaps: run `xcode-select --install` for git, install Node from https://nodejs.org, install `gh` from https://cli.github.com, and install Codex with `curl -fsSL https://chatgpt.com/codex/install.sh | sh`.
 
 ---
 
 ## Editing the site (every time)
 
-1. **Open Terminal, go to the folder, start Codex:**
+1. **Open PowerShell, go to the folder, start Codex:**
 
-        cd ~/Documents/flourish-financial-group
+        cd ~\Documents\flourish-financial-group
         codex
 
 2. **Ask for the change in plain English.** Codex has a file called `AGENTS.md` that tells it how this site is built and what not to touch. Examples that work well:
@@ -108,9 +111,9 @@ The first time, choose **Sign in with ChatGPT** and approve in the browser. That
 
 ## If something goes wrong
 
-- **Site didn't update after publishing.** Wait two minutes and hard-refresh (⌘-Shift-R). Still stale? Open your repository on github.com and click the **Actions** tab. A red ✗ means the build failed. Copy the error and tell Codex "the deploy failed with this error" and paste it.
+- **Site didn't update after publishing.** Wait two minutes and hard-refresh (Ctrl-Shift-R). Still stale? Open your repository on github.com and click the **Actions** tab. A red ✗ means the build failed. Copy the error and tell Codex "the deploy failed with this error" and paste it.
 - **Codex says the build failed.** Say "fix the build." It usually can. If not, "undo my last change."
-- **`codex` command not found.** Close Terminal, reopen it, try again. If still missing, rerun `npm install -g @openai/codex`.
+- **`codex` command not found.** Close PowerShell, reopen it, try again. If still missing, rerun the install line from step 5.
 - **Anything else.** Text JT. The site is a folder of text files; nothing you do in Codex can break the live site until you say "publish," and every published change can be undone.
 
 ---

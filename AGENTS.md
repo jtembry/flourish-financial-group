@@ -28,7 +28,7 @@ This is the public website for Flourish Financial Group, LLC (Beth Hacker, AFC®
 4. **Palette is fixed** unless Beth explicitly asks to change it: background `#F8F9FA`, navy `#0A192F`, accent `#00A896`. The bright accent fails accessibility as body text; use `--teal` for text. Keep WCAG AA contrast on every new color pairing.
 5. **Do not edit** `.github/workflows/deploy.yml`, `public/CNAME`, or `astro.config.mjs` unless Beth asks about hosting or the domain specifically.
 6. **Commit and push only when Beth says to** (for example "publish that" or "push it"). Use a short plain-English commit message describing the change. After pushing, tell her the site will update in about a minute and to refresh the page.
-7. **Preview first.** When Beth wants to see a change, run `npm run dev` and tell her to open http://localhost:4321. Stop the server when she is done.
+7. **Preview first.** When Beth wants to see a change, run `npm run dev` and tell her to open http://localhost:4321. Stop the server when she is done. Beth works on **Windows** (PowerShell); use Windows-friendly commands and paths, and never assume bash-only tools.
 8. **Undo is easy.** If she wants to reverse the last published change, use `git revert HEAD`, build, and push. Never rewrite history with force-push.
 9. **Sensitive content.** Never add client names, testimonials, or personal stories to the site unless Beth confirms she has written permission from that person.
 10. Keep every page working at phone width. Check the dev preview at a narrow window after layout changes.
