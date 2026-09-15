@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
-// TODO: set to the purchased domain before launch (used for canonical URLs and sitemap).
+// Beth's chosen domain (2026-09-14). Unregistered as of that date — buy it before launch.
 export default defineConfig({
-  site: 'https://flourishfinancialgroup.co',
+  site: 'https://flourishfinancialgroup.org',
   trailingSlash: 'never',
 });
