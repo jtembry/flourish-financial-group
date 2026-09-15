@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+import site from '../data/site.json';
+const { title, description } = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const nav = [
+  ['/', 'Home'],
+  ['/about', 'About'],
+  ['/services', 'Services'],
+  ['/divorce', 'Divorce prep'],
+  ['/cohort', 'Group cohort'],
+  ['/nonprofits', 'Nonprofits'],
+  ['/resources', 'Resources'],
+  ['/contact', 'Contact'],
+];
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · {site.businessName}</title>
+    <meta name="description" content={description ?? site.tagline} />
+    <link rel="canonical" href={new URL(path, Astro.site)} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site">
+      <div class="wrap">
+        <a class="brand" href="/">{site.businessName}</a>
+        <nav class="primary" aria-label="Primary">
+          <ul>
+            {nav.map(([href, label]) => (
+              <li><a href={href} aria-current={path === href ? 'page' : undefined}>{label}</a></li>
+            ))}
+          </ul>
+        </nav>
+        <a class="btn btn-primary" href={site.bookingUrl}>Book a free consult</a>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site">
+      <div class="wrap">
+        <p><strong>{site.ownerName}</strong> · {site.businessName}<br />
+          <a href={site.phoneHref}>{site.phone}</a>{site.email && <> · <a href={`mailto:${site.email}`}>{site.email}</a></>}<br />
+          {site.location}<br />{site.hours}</p>
+        <p><a href={site.bookingUrl}>Book a session</a> · <a href="/contact">Contact</a> · <a href={site.linkedin} rel="me">LinkedIn</a> · <a href={site.afcpeEthics}>AFCPE Code of Ethics</a></p>
+        <p class="disclaimer">{site.ownerName} provides fee-only financial counseling and education. She is not an attorney, tax preparer, investment adviser, or Certified Divorce Financial Analyst®, and nothing on this site or in a session is legal, tax, or investment advice. AFC® and Accredited Financial Counselor® are marks of AFCPE®. CDFA® is a mark of the Institute for Divorce Financial Analysts.</p>
+      </div>
+    </footer>
+  </body>
+</html>

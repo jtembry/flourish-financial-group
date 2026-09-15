@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title="Weekly group cohort" description="A small group working through the nine AFC® competencies over six months. Join the waitlist.">
+  <section class="section">
+    <div class="wrap">
+      <h1>Weekly group cohort</h1>
+      <p class="lede">Learning money in a room full of people doing the same thing is easier than doing it alone. This is that room.</p>
+      <h2>What it is</h2>
+      <ul>
+        <li>A weekly group session by Google Meet, working through the nine AFC® competencies over six months.</li>
+        <li>A private community between sessions.</li>
+        <li>Access to a money-tracking app through my professional account, so your plan lives somewhere you'll look at it.</li>
+        <li>Members-only resources and recordings for as long as you're subscribed.</li>
+      </ul>
+      <h2>Pricing</h2>
+      <div class="grid">
+        <div class="card"><h3>Six-month commitment</h3><p class="price">{site.prices.cohortSixMonth}</p><p>Best value. Billed monthly for six months.</p></div>
+        <div class="card"><h3>Month to month</h3><p class="price">{site.prices.cohortMonthly}</p><p>Cancel any time.</p></div>
+      </div>
+      <h2>When it starts</h2>
+      <p>The first cohort opens once five people are on the waitlist, and starts within about a month of the fifth sign-up. Joining the list costs nothing and commits you to nothing.</p>
+      <p><a class="btn btn-primary" href={site.waitlistUrl}>Join the waitlist</a></p>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+const competencies = [
+  ['Set the Stage and Gather Client Information', "We start with your whole picture: numbers, history, and what's going on in your life."],
+  ['Assist a Client in Creating an Action Plan', 'You leave with a written plan, prioritized, with dates.'],
+  ['Educate a Client about Financial Statements, Ratios, and Spending Plans', "A spending plan you'll actually use, and the two or three ratios that tell you if it's working."],
+  ['Manage Money', 'Banking, cash flow, tax withholding, pay and benefits.'],
+  ['Educate a Client about Credit and Debt', 'Read your credit report together, then build a payoff plan with a date on it.'],
+  ['Educate a Client about Major Acquisitions', 'Cars, homes, relocation: what you can afford, and what the fine print costs.'],
+  ['Manage Financial Risks', 'Emergency fund sizing and an honest look at insurance gaps.'],
+  ['Discuss Investment Basics with a Client', 'Enough to make your workplace plan and first accounts make sense. Not stock picking.'],
+  ['Educate a Client about the Financial Aspects of Retirement and Estate Planning', 'The basics of retirement accounts, pensions, and getting your documents in order.'],
+];
+---
+<Base title="About Beth" description="Beth Hacker, AFC®, MBA. Fee-only fiduciary financial counselor with 13 years serving military families and people in transition.">
+  <section class="section">
+    <div class="wrap">
+      <h1>About Beth</h1>
+      <!-- TODO: headshot → public/images/beth.jpg -->
+      <p class="lede">Accredited Financial Counselor® and MBA (UNC Kenan-Flagler). Fee-only fiduciary. Teacher at heart.</p>
+      <p>I came to financial counseling through the military community, interviewing hundreds of service members and families at Minot Air Force Base and writing the seminars that taught them to budget, borrow, and buy with their eyes open. Over the next decade I counseled more than 600 active-duty members and dependents across six states, trained other counselors, and built the materials teams still use.</p>
+      <p>Education is what drives me. Before and alongside counseling I have taught secondary math and coached middle-school math teachers, and I bring the same conviction to money: you can learn this, and you should never have to feel ashamed of where you're starting. My sessions are empowerment-based and emotionally safe. I have worked with Christian ministries in three states helping survivors of trafficking regain financial independence, with military and pilot spouses restarting after divorce, and with young adults learning the fundamentals.</p>
+      <p>I was a fellowship recipient for MBA@UNC and for the FINRA Military Spouse AFCPE fellowship. I am fee-only: I don't sell products, I don't earn commissions, and your interests come first. When something is outside my lane, I'll say so and point you to the right professional.</p>
+    </div>
+  </section>
+
+  <section class="section band" id="afc">
+    <div class="wrap">
+      <h2>What is an AFC®?</h2>
+      <p>An Accredited Financial Counselor® is certified by the Association for Financial Counseling &amp; Planning Education (AFCPE®). Where a financial <em>planner</em> usually focuses on investments and wealth, an AFC works on the foundation: the spending plan, the debt, the credit, the big purchases, the risks, and the habits that make the rest possible. The credential is NCCA-accredited and grounded in behavior-change counseling, so the incentive is your outcome, not a commission.</p>
+      <p>The certification covers nine core competencies. Every session draws on some of them. <a href={site.afcpeCompetencies}>Read the official AFC® core competencies at AFCPE.</a></p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>AFCPE competency</th><th>What it means for you</th></tr></thead>
+        <tbody>{competencies.map(([name, gloss], i) => <tr><td>{i + 1}</td><td>{name}</td><td>{gloss}</td></tr>)}</tbody>
+      </table></div>
+      <p class="muted">Competency titles are AFCPE's; the plain-English column is mine. I sign the <a href={site.afcpeEthics}>AFCPE Code of Ethics</a> every year: confidentiality, fair and reasonable compensation, and knowing my limits.</p>
+    </div>
+  </section>
+</Base>

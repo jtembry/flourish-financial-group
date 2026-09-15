@@ -1,0 +1,33 @@
+{
+  "businessName": "Flourish Financial Group, LLC",
+  "ownerName": "Beth Hacker, AFC®, MBA",
+  "tagline": "Fee-only financial counseling for people who want a plan, not a product.",
+  "phone": "(502) 654-8596",
+  "phoneHref": "tel:+15026548596",
+  "email": "",
+  "location": "Louisville metro · Indiana LLC · sessions by Google Meet",
+  "hours": "Weekdays 4:00–5:30 pm ET · weekend afternoons",
+  "bookingUrl": "https://cal.com/REPLACE-ME/consult",
+  "waitlistUrl": "https://forms.gle/REPLACE-ME",
+  "contactFormUrl": "https://forms.gle/REPLACE-ME",
+  "linkedin": "https://www.linkedin.com/in/beth-hacker-mba-afc",
+  "afcpeCompetencies": "https://www.afcpe.org/certification/accredited-financial-counselor/afc-core-competencies/",
+  "afcpeEthics": "https://www.afcpe.org/certification/professional-standards/code-of-ethics/",
+  "stripe": {
+    "singleSession": "https://buy.stripe.com/REPLACE-ME",
+    "sixWeekPackage": "https://buy.stripe.com/REPLACE-ME",
+    "cohortMonthly": "https://buy.stripe.com/REPLACE-ME",
+    "cohortSixMonth": "https://buy.stripe.com/REPLACE-ME",
+    "divorcePackage": "https://buy.stripe.com/REPLACE-ME"
+  },
+  "prices": {
+    "singleSession": "$125",
+    "consult": "Free 15-minute consultation",
+    "sixWeekPackage": "$600",
+    "cohortMonthly": "$125/month",
+    "cohortSixMonth": "$70/month with a six-month commitment",
+    "divorcePackage": "$2,000",
+    "nonprofitCohort": "$60 per participant per month",
+    "nonprofitHourly": "$125/hour"
+  }
+}

@@ -1,0 +1,58 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title="Fee-only financial counseling" description={site.tagline}>
+  <section class="section band-navy">
+    <div class="wrap">
+      <p class="tag">Accredited Financial Counselor® · MBA · fee-only fiduciary</p>
+      <h1>A plan you built, with someone in your corner.</h1>
+      <p class="lede" style="color:#e5e9ef">I'm Beth Hacker. For thirteen years I've helped military families, people starting over after divorce, and first-paycheck young adults turn a pile of statements into a plan they can actually run. No products, no commissions. Just the math and the next step.</p>
+      <p><a class="btn btn-primary" href={site.bookingUrl}>Book a free 15-minute consult</a> <a class="btn btn-secondary" href="/services">See services &amp; prices</a></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap grid">
+      <div><span class="stat">600+</span>military members and families counseled</div>
+      <div><span class="stat">6</span>states served on military installations</div>
+      <div><span class="stat">60+</span>financial seminars written and taught</div>
+      <div><span class="stat">13 yrs</span>in financial counseling</div>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="wrap">
+      <h2>Who I work with</h2>
+      <div class="grid">
+        <div class="card"><h3>Military families</h3><p>Budgets that survive PCS, deployment, and pay changes. Transition budgets built on the pay you'll actually take home.</p></div>
+        <div class="card"><h3>Life transitions</h3><p>Relocation, home buying, a new job. What you can really afford, before anyone else tells you a number.</p></div>
+        <div class="card"><h3>Divorce financial prep</h3><p>The full financial picture, organized and forecast, so you and your attorney start with clean numbers. <a href="/divorce">How it works</a></p></div>
+        <div class="card"><h3>Debt and credit</h3><p>Your credit reports read line by line, a payoff order chosen on purpose, and a date it clears.</p></div>
+        <div class="card"><h3>Young adults</h3><p>First budget, first credit card used right, and your workplace match captured.</p></div>
+        <div class="card"><h3>Nonprofits &amp; ministries</h3><p>Cohorts and workshops built to your grant's outcome measures. <a href="/nonprofits">For organizations</a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><strong>Free 15-minute consult.</strong> You tell me what's going on. I tell you honestly whether I'm the right fit.</li>
+        <li><strong>Gather the picture.</strong> Income, spending, debts, accounts, and what's happening in your life. Everything you share stays confidential.</li>
+        <li><strong>Build the plan.</strong> Goals with numbers and dates, a spending plan you'll use, and the first three moves.</li>
+        <li><strong>Work it together.</strong> Weekly sessions in the six-week package, or a single session when you need a reset.</li>
+      </ol>
+      <p><a class="btn btn-primary" href={site.bookingUrl}>Book a free consult</a></p>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="wrap">
+      <h2>Weekly group cohort</h2>
+      <p>A small group working through the nine AFC® competencies together over six months, with a private community and money-tracking tools included. The first cohort opens when five people are on the list.</p>
+      <p><a class="btn btn-secondary" href="/cohort">Join the waitlist</a></p>
+    </div>
+  </section>
+</Base>

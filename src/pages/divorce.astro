@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title="Divorce financial preparation" description="Cash-flow analysis, forecasting, settlement analysis, and a post-divorce plan. Groundwork before you pay litigation-support rates.">
+  <section class="section">
+    <div class="wrap">
+      <h1>Divorce financial preparation</h1>
+      <p class="lede">Divorce is a financial event as much as a legal one, and most people walk into it without a clear picture of what they own, owe, earn, and spend. That picture is what I help you build.</p>
+      <h2>What I do</h2>
+      <ul>
+        <li><strong>Organize the full financial inventory:</strong> accounts, debts, property, income, and expenses, with statements behind every number, ready for your attorney or mediator.</li>
+        <li><strong>Cash-flow analysis and forecasting:</strong> what one household costs on one income, and how each decision on the table changes the next five years.</li>
+        <li><strong>Settlement analysis:</strong> model the proposals side by side, including retirement accounts, the house, support, and taxes, so you can see what each one really means for you.</li>
+        <li><strong>Dividing debt and assets fairly,</strong> and deciding on housing: keep, sell, or refinance, with the numbers to back the choice.</li>
+        <li><strong>Managing financial risk</strong> through the transition: insurance gaps, emergency fund, and credit in your own name.</li>
+        <li><strong>Financial wellness after the decree:</strong> a plan for the next two years, not just the settlement date.</li>
+        <li>Basic tax and investment education as it relates to your settlement. These are not my specialty; for complex questions I'll refer you.</li>
+      </ul>
+      <h2>What I don't do</h2>
+      <ul>
+        <li>I am not an attorney and do not give legal advice, draft or review legal documents, or tell you what to accept.</li>
+        <li>I am not a Certified Divorce Financial Analyst® and do not provide expert-witness testimony. If your case needs that, I'll say so and help you find one.</li>
+        <li>I do not prepare tax returns.</li>
+      </ul>
+      <h2>Why start here</h2>
+      <p>Litigation-support specialists commonly bill $200 to $300 an hour. Much of what they charge for is groundwork: the inventory, the cash flow, the modeling. Doing that groundwork with me first costs less, and it makes any specialist hour count.</p>
+    </div>
+  </section>
+  <section class="section band">
+    <div class="wrap">
+      <h2>Full divorce prep package</h2>
+      <p class="price">{site.prices.divorcePackage}</p>
+      <ul>
+        <li>Up to six one-on-one meetings (Google Meet)</li>
+        <li>A written settlement analysis</li>
+        <li>Six months of the weekly group cohort, with community and money-tracking tools</li>
+      </ul>
+      <p><a class="btn btn-primary" href={site.stripe.divorcePackage}>Start the package</a> <a class="btn btn-secondary" href={site.bookingUrl}>Ask a question first (free consult)</a></p>
+      <p class="muted">Single sessions ({site.prices.singleSession}) are also available for one narrow question.</p>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title="Contact & booking" description="Book a free 15-minute consult, call, or send a message.">
+  <section class="section">
+    <div class="wrap">
+      <h1>Contact &amp; booking</h1>
+      <div class="grid">
+        <div class="card"><h3>Book</h3><p>Pick a time and pay in one step. {site.hours}.</p><a class="btn btn-primary" href={site.bookingUrl}>Book a free consult</a></div>
+        <div class="card"><h3>Call or text</h3><p class="price"><a href={site.phoneHref}>{site.phone}</a></p><p>If I'm with a client I'll call back the same day.</p></div>
+        <div class="card"><h3>Message</h3><p>Organizations, questions, or anything that doesn't fit a booking.</p><a class="btn btn-secondary" href={site.contactFormUrl}>Send a message</a></div>
+      </div>
+      <p class="muted" style="margin-top:2rem">{site.location}</p>
+    </div>
+  </section>
+</Base>

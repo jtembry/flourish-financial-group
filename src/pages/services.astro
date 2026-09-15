@@ -1,0 +1,91 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+const { prices, stripe } = site;
+---
+<Base title="Services & pricing" description="Single sessions, a six-week package, a weekly group cohort, and divorce financial prep. Prices listed. Pay when you book.">
+  <section class="section">
+    <div class="wrap">
+      <h1>Services &amp; pricing</h1>
+      <p class="lede">Prices are on the page because you shouldn't have to book a call to find out. Sessions are paid when you book.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Free consultation</h3>
+          <p class="price">$0 · 15 min</p>
+          <p>Tell me what's going on. I'll tell you honestly whether I can help and which option fits.</p>
+          <a class="btn btn-primary" href={site.bookingUrl}>Book the consult</a>
+        </div>
+        <div class="card">
+          <h3>Single session</h3>
+          <p class="price">{prices.singleSession} · 60 min</p>
+          <p>A reset on one thing: a spending plan, a debt payoff order, a home-affordability number, a credit report review.</p>
+          <a class="btn btn-secondary" href={stripe.singleSession}>Book &amp; pay</a>
+        </div>
+        <div class="card">
+          <h3>Six-week package</h3>
+          <p class="price">{prices.sixWeekPackage} · 6 weekly sessions</p>
+          <p>The full build: gather the picture, write the plan, work it week by week until it runs on its own.</p>
+          <a class="btn btn-secondary" href={stripe.sixWeekPackage}>Start the package</a>
+        </div>
+        <div class="card">
+          <h3>Weekly group cohort</h3>
+          <p class="price">{prices.cohortMonthly}</p>
+          <p class="muted">or {prices.cohortSixMonth}</p>
+          <p>Group education through the nine competencies, private community, and money-tracking tools included.</p>
+          <a class="btn btn-secondary" href="/cohort">Join the waitlist</a>
+        </div>
+        <div class="card">
+          <h3>Divorce financial prep</h3>
+          <p class="price">{prices.divorcePackage}</p>
+          <p>Six one-on-one meetings, a settlement analysis, and six months of the cohort. <a href="/divorce">Details</a></p>
+          <a class="btn btn-secondary" href={stripe.divorcePackage}>Start the package</a>
+        </div>
+        <div class="card">
+          <h3>For nonprofits</h3>
+          <p class="price">{prices.nonprofitCohort}</p>
+          <p class="muted">plus {prices.nonprofitHourly} for one-on-one sessions</p>
+          <p>Cohorts and workshops scoped to your grant objectives. <a href="/nonprofits">For organizations</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="wrap">
+      <h2>What you can expect to walk away with</h2>
+      <div class="grid">
+        <div class="card"><h3>Counseling sessions</h3><ul>
+          <li>A written spending plan built on your real numbers, by the end of session two.</li>
+          <li>A debt payoff plan with an order, a monthly amount, and a projected payoff date.</li>
+          <li>Your credit reports reviewed line by line, with disputes filed for anything wrong.</li>
+          <li>An emergency-fund target sized to your life, and the account it lives in opened.</li>
+          <li>Tax withholding checked so you stop lending the IRS money, or owing in April.</li>
+          <li>A one-page financial snapshot you can hand to a spouse, lawyer, or lender.</li>
+        </ul></div>
+        <div class="card"><h3>Life transitions</h3><ul>
+          <li>A move budget that covers the gap between last paycheck and first.</li>
+          <li>A "what can we actually afford" number for a home, including taxes, insurance, and upkeep, before you talk to a lender.</li>
+          <li>A pre-approval checklist and a credit plan timed to your purchase date.</li>
+        </ul></div>
+        <div class="card"><h3>Military families</h3><ul>
+          <li>A budget that survives PCS, deployment, and the pay changes that come with them.</li>
+          <li>Military benefits and SCRA checklist reviewed for anything you're leaving on the table.</li>
+          <li>A transition-to-civilian budget built on the pay you'll actually take home.</li>
+        </ul></div>
+        <div class="card"><h3>Young adults</h3><ul>
+          <li>Your first budget, first credit card used correctly, and your workplace retirement match captured.</li>
+          <li>A student loan repayment plan chosen on purpose, not by default.</li>
+        </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>Booking, payment, and rescheduling</h2>
+      <p>Sessions are by Google Meet, {site.hours.toLowerCase()}. Payment is taken when you book. Reschedule free up to 24 hours before; inside 24 hours the session is forfeited except for emergencies, which we'll work out like humans. Packages are non-refundable after the first session; unused sessions stay good for 12 months.</p>
+      <!-- TODO(Beth): confirm or replace this policy. -->
+      <p><a class="btn btn-primary" href={site.bookingUrl}>Book a free consult</a></p>
+    </div>
+  </section>
+</Base>

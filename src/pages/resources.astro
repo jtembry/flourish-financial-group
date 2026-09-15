@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+const all = (await getCollection('resources', (r) => r.data.published)).sort((a, b) => a.data.order - b.data.order);
+const items = await Promise.all(all.map(async (r) => ({ ...r, Content: (await render(r)).Content })));
+const label = { public: 'Free', members: 'Cohort members', purchase: 'Workbook' };
+---
+<Base title="Resources" description="Free tools I send clients to, plus members-only and workbook resources.">
+  <section class="section">
+    <div class="wrap">
+      <h1>Resources</h1>
+      <p class="lede">The tools I actually send clients to. Free ones are open to everyone; some are for cohort members or come with a workbook.</p>
+      <div class="grid">
+        {items.map(({ data, Content }) => (
+          <article class="card">
+            <span class={`tag ${data.access !== 'public' ? 'tag-locked' : ''}`}>{label[data.access]}</span>
+            <h3 style="margin-top:.5rem">{data.url ? <a href={data.url}>{data.title}</a> : data.title}</h3>
+            <p class="muted">{data.audience}</p>
+            <Content />
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

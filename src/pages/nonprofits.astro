@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title="For nonprofits & ministries" description="Financial-independence cohorts and workshops for the people you serve, built to your grant's outcome measures.">
+  <section class="section">
+    <div class="wrap">
+      <h1>For nonprofits &amp; ministries</h1>
+      <p class="lede">I partner with organizations serving people rebuilding their financial lives: survivors of trafficking and abuse, military families in transition, young adults on their first paycheck. I've delivered this work with ministries in three states, and every program is built to report against your grant's outcome measures.</p>
+      <h2>Pricing for organizations</h2>
+      <ul>
+        <li>Group cohort: {site.prices.nonprofitCohort}</li>
+        <li>One-on-one counseling: {site.prices.nonprofitHourly}</li>
+        <li>Or a fixed scope matched to your grant deliverables</li>
+      </ul>
+      <p>Every engagement includes pre/post assessment data you can put in a funder report. Delivered in person at your venue or by Google Meet.</p>
+    </div>
+  </section>
+  <section class="section band">
+    <div class="wrap">
+      <h2>Workshop series: From Paycheck-to-Paycheck to a Plan</h2>
+      <p>Three 90-minute sessions. Each stands alone or runs as a series.</p>
+      <div class="grid">
+        <div class="card"><h3>1 · Where the money goes</h3><p>Participants build a one-page picture of their real income and spending, learn the difference between fixed, flexible, and surprise costs, and leave with a first spending plan for the next 30 days.</p><p class="muted"><strong>Outcome measure:</strong> every participant has a written spending plan; baseline financial well-being score recorded.</p></div>
+        <div class="card"><h3>2 · Getting out from under</h3><p>Credit reports pulled and read together, the debt list built, and a payoff order chosen on purpose. Collector rights and how to answer a collection letter.</p><p class="muted"><strong>Outcome measure:</strong> participants can name their total debt, their next payoff target, and the date it clears.</p></div>
+        <div class="card"><h3>3 · Building the cushion</h3><p>Emergency fund sizing, automating savings, separating bills from spending money, and the three habits that keep a plan alive.</p><p class="muted"><strong>Outcome measure:</strong> an emergency-fund account opened with an automatic transfer set.</p></div>
+      </div>
+      <h3 style="margin-top:1.5rem">Versions</h3>
+      <p>Military-family (PCS, deployment pay, SCRA) · Starting over after divorce (one household on one income) · First paycheck (young adults). Each workshop comes with a participant workbook and a facilitator summary for your case managers.</p>
+      <p><a class="btn btn-primary" href={site.contactFormUrl}>Tell me about your grant</a></p>
+    </div>
+  </section>
+</Base>
