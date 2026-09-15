@@ -1,4 +1,4 @@
-# Flourish Financial Group site
+# Flourish Financial Counseling site
 
 Static site for Beth Hacker, AFC®, MBA. See CLAUDE.md for the stack and rules.
 

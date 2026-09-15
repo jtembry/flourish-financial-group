@@ -36,6 +36,7 @@ collections:
         file: src/data/site.json
         fields:
           - { name: businessName, label: Business name, widget: string }
+          - { name: subtitle, label: Subtitle under the name, widget: string }
           - { name: ownerName, label: Your name and credentials, widget: string }
           - { name: tagline, label: Tagline, widget: string }
           - { name: phone, label: Phone (as shown), widget: string }
