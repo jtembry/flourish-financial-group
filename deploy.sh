@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Build and publish dist/ to the gh-pages branch (GitHub Pages source).
-# Stopgap until the Actions workflow in .github/workflows/deploy.yml can be pushed (needs `gh auth refresh -s workflow`).
+# FALLBACK ONLY. Normal deploys happen automatically on push to main via .github/workflows/deploy.yml.
+# Pages source is now 'GitHub Actions'; this branch is ignored unless you switch the source back.
 set -euo pipefail
 cd "$(dirname "$0")"
 npm run build
