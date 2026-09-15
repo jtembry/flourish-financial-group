@@ -78,3 +78,20 @@ summary { font-weight: 700; color: var(--navy); cursor: pointer; }
   .hero-photo { max-width: 14rem; order: -1; }
   .portrait { max-width: 12rem; }
 }
+
+/* Bring the mint/teal into the 30% layer so the scheme reads as navy + teal + gray, not navy + white. */
+h2::after { content: ""; display: block; width: 3.5rem; height: 4px; margin-top: .5rem; border-radius: 2px; background: var(--teal-bright); }
+.band-navy h2::after { background: var(--gold); }
+.card { border-top: 4px solid var(--teal-bright); }
+.band-mint { background: var(--mint); }
+.band-mint h2, .band-mint h3 { color: var(--navy); }
+.stat { color: var(--teal); }
+.tag { background: var(--teal); color: var(--white); }
+.tag-locked { background: var(--gray-2); color: var(--navy); }
+.band-navy .tag { background: var(--teal-bright); color: var(--navy); }
+ol.steps li::before { background: var(--teal); }
+.price { color: var(--teal); }
+nav.primary a[aria-current="page"] { border-bottom-color: var(--teal-bright); }
+header.site { border-bottom: 3px solid var(--teal-bright); }
+footer.site { border-top: 6px solid var(--teal-bright); }
+.btn-secondary:hover { background: var(--mint); }
