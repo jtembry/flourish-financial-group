@@ -67,3 +67,14 @@ ol.steps li { counter-increment: s; padding-left: 3rem; position: relative; }
 ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--navy); color: var(--white); display: grid; place-items: center; font-weight: 800; }
 details { border: 1px solid var(--gray-2); border-radius: var(--radius); padding: .75rem 1rem; margin-bottom: .75rem; background: var(--white); }
 summary { font-weight: 700; color: var(--navy); cursor: pointer; }
+
+/* Photos */
+.hero { display: grid; gap: 2rem; align-items: center; grid-template-columns: minmax(0, 3fr) minmax(14rem, 2fr); }
+.hero-photo { width: 100%; max-width: 22rem; justify-self: center; border-radius: 50%; aspect-ratio: 1; object-fit: cover; box-shadow: 0 10px 40px rgba(0,0,0,.35); border: 6px solid rgba(255,255,255,.12); }
+.about-head { display: grid; gap: 2rem; align-items: center; grid-template-columns: minmax(10rem, 16rem) minmax(0, 1fr); margin-bottom: 1.5rem; }
+.portrait { width: 100%; border-radius: var(--radius); aspect-ratio: 1; object-fit: cover; }
+@media (max-width: 40rem) {
+  .hero, .about-head { grid-template-columns: 1fr; }
+  .hero-photo { max-width: 14rem; order: -1; }
+  .portrait { max-width: 12rem; }
+}
