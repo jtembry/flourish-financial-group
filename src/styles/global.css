@@ -123,11 +123,13 @@ nav.primary ul li::before { content: none; }
 .lede { font-weight: 300; }
 .hero-visual { position: relative; justify-self: center; }
 .leaf { display: block; }
-.leaf-hero { position: absolute; right: -2.5rem; top: -1.5rem; width: 7rem; --leaf-stem: #cfe9e4; --leaf-accent: #00a896; opacity: .9; }
-.leaf-footer { width: 5rem; justify-self: end; --leaf-stem: #cfe9e4; --leaf-accent: #00a896; }
+.hero-band { position: relative; overflow: hidden; }
+.hero-band .wrap { position: relative; z-index: 1; }
+.leaf-hero { position: absolute; right: -3rem; bottom: -4rem; width: 20rem; --leaf-stem: #cfe9e4; --leaf-accent: #00a896; opacity: .16; pointer-events: none; }
+.leaf-footer { width: 4rem; justify-self: end; align-self: end; --leaf-stem: #cfe9e4; --leaf-accent: #00a896; opacity: .55; }
 .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 1rem 2rem; align-items: start; }
 .footer-brand { font-family: var(--serif); font-size: 1.5rem; line-height: 1.3; }
 .footer-brand em { font-family: var(--font); font-style: italic; font-size: 1rem; color: #cfe9e4; }
 .price { font-size: 1.6rem; }
 .stat { font-size: 2.2rem; }
-@media (max-width: 40rem) { .leaf-hero { right: -1rem; width: 5rem; } }
+@media (max-width: 40rem) { .leaf-hero { width: 12rem; right: -3rem; opacity: .12; } }
