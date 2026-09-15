@@ -58,6 +58,32 @@ Close PowerShell, open it again, go back to the folder, and start it:
 
 The first time, choose **Sign in with ChatGPT** and approve in the browser. Codex may also ask to set up its sandbox and want an administrator's OK; on your own laptop that's you, so allow it. Type `/quit` to leave Codex whenever you're done.
 
+### 6. Point your domain at your account (after the transfer)
+
+Right now the site is published from JT's GitHub account. Once the repository is in yours, two settings move it to you. Do these together; the site may show a certificate warning for a few minutes in between.
+
+**On GitHub:** open your repository at github.com, click **Settings**, then **Pages** in the left menu.
+- Under *Build and deployment*, set **Source** to **GitHub Actions**.
+- Under *Custom domain*, enter `flourishfinancialgroup.org` and click **Save**.
+- When the checkmark appears (usually within a few minutes), tick **Enforce HTTPS**.
+
+**On GoDaddy:** sign in at godaddy.com, go to **My Products**, find flourishfinancialgroup.org, and click **DNS**.
+- Find the row with **Type CNAME** and **Name www**. Click the pencil to edit it. Change the **Value** from `jtembry.github.io` to `YOUR-USERNAME.github.io` (your GitHub username, all lowercase). Save.
+- Leave the four **A** records with Name `@` exactly as they are. They point at GitHub, not at a person.
+- Don't touch any other rows.
+
+The full set of records, for reference, is:
+
+| Type | Name | Value |
+| --- | --- | --- |
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | YOUR-USERNAME.github.io |
+
+Give it 10 to 30 minutes, then open https://flourishfinancialgroup.org. If GitHub's Pages settings show "DNS check successful," you're done. If it shows a warning after an hour, text JT with a screenshot of the GoDaddy DNS page.
+
 **Prefer a window over a terminal?** The ChatGPT desktop app for Windows includes Codex too. Install ChatGPT from the Microsoft Store, sign in, open the Codex tab, and point it at the `Documents\flourish-financial-group` folder. Everything in the next section works the same way there.
 
 **On a Mac instead?** The steps are the same with these swaps: run `xcode-select --install` for git, install Node from https://nodejs.org, install `gh` from https://cli.github.com, and install Codex with `curl -fsSL https://chatgpt.com/codex/install.sh | sh`.
