@@ -5,7 +5,7 @@ Static marketing + booking site for Beth Hacker's fee-only financial counseling 
 ## Stack ($0/month by design — Beth does not want a monthly bill)
 
 - Astro 5, static output, no framework islands. Node 20+.
-- Hosting: **GitHub Pages** via `.github/workflows/deploy.yml` (every push to main redeploys; `public/CNAME` holds the domain). Domain: **flourishfinancialgroup.org** (Beth's choice 2026-09-14; unregistered that night — buy at Cloudflare Registrar or Porkbun). flourishfinancialgroup.com is taken by someone else.
+- Hosting: **GitHub Pages**, repo `jtembry/flourish-financial-group` (public — required for free Pages). LIVE 2026-09-14. Deploy = `npm run deploy` (builds and force-pushes `dist/` to the `gh-pages` branch). `.github/workflows/deploy.yml` would automate this on push to main but is untracked until JT's gh token gets the `workflow` scope; once pushed, switch Pages source to "GitHub Actions". `public/CNAME` holds the domain; HTTPS enforced. DNS at GoDaddy: 4 A records @ → 185.199.108–111.153, CNAME www → jtembry.github.io. Domain: **flourishfinancialgroup.org** (Beth's choice 2026-09-14; unregistered that night — buy at Cloudflare Registrar or Porkbun). flourishfinancialgroup.com is taken by someone else.
 - Content Beth edits: `src/content/resources/*.md` and `src/data/site.json`, through Decap CMS at `/admin` (`public/admin/config.yml`). Auth not wired yet — see the TODO in that file.
 - Booking + prepay: Cal.com free plan + Stripe (`bookingUrl` in site.json).
 - Packages and subscriptions: Stripe Payment Links (`stripe.*` in site.json). Six-month cohort tier is sold as a $420 prepaid product because Stripe can't enforce a minimum term.
